@@ -4,102 +4,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".MainActivity">
 
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/BodyMassIndex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:text="YOUR BODY MASSA INDEX"
+        android:layout_marginTop="104dp"
+        android:text="YOUR BODY MASS INDEX"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/pointBMI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/BMI_point"
+        android:id="@+id/pointBMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="80dp"
         android:text="0"
         android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/BodyMassIndex" />
 
     <EditText
         android:id="@+id/name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="80dp"
-        android:autofillHints=""
+        android:layout_margin="16dp"
+        android:ems="10"
         android:hint="Name"
-        android:textSize="25dp"
-        android:inputType="textNoSuggestions"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BMI_point"
-        tools:ignore="TextFields" />
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointBMI"
+        tools:layout_editor_absoluteY="397dp" />
 
     <EditText
         android:id="@+id/height"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="80dp"
-        android:autofillHints=""
+        android:layout_margin="16dp"
+        android:ems="10"
         android:hint="Height"
-        android:inputType="number"
-        android:textSize="25dp"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/weight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name"
-        tools:ignore="TextFields"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteY="468dp" />
 
     <EditText
         android:id="@+id/weight"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="80dp"
-        android:autofillHints=""
+        android:layout_margin="16dp"
+        android:ems="10"
         android:hint="Weight"
-        android:inputType="number"
-        android:textSize="25dp"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/height"
-        tools:ignore="TextFields"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteY="535dp" />
 
     <EditText
         android:id="@+id/age"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="80dp"
-        android:autofillHints=""
+        android:layout_margin="16dp"
+        android:ems="10"
         android:hint="Age"
-        android:inputType="number"
-        android:textSize="25dp"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weight"
-        tools:ignore="TextFields"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteY="596dp" />
 
     <Button
         android:id="@+id/buttonCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="calculate"
+        android:layout_margin="16dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/age"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

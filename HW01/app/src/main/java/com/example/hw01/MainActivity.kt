@@ -32,31 +32,49 @@ class MainActivity : AppCompatActivity() { //
         weight = findViewById(R.id.weight)
         age = findViewById(R.id.age)
         buttonCalculate = findViewById(R.id.buttonCalculate)
-        pointBMI = findViewById(R.id.BMI_point)
+        pointBMI = findViewById(R.id.pointBMI)
 
         fun messageError() {
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Error", Toast.LENGTH_LONG)
+                .show()
         }
 
         buttonCalculate?.setOnClickListener {
+            var peopleWeight = 0F
+            var peopleHeight = 0F
+
+
             try {
-                val peopleName: Int = name!!.length() // если будет null то выкенет null pointer exception
-                val peopleWeight: Int = weight!!.text.toString().toInt()
-                val peopleHeight: Int = height!!.text.toString().toInt()
-                val peopleAge: Int = age!!.text.toString().toInt()
 
-                if (peopleName <= 0 || peopleName > 50) messageError()
+                if (name!!.length() > 50) messageError()
 
-                if (peopleHeight <= 0 || peopleHeight > 250) messageError()
+                if (weight!!.text.toString().toInt() <= 0 || weight!!.text.toString()
+                        .toInt() > 250
+                ) {
+                    messageError()
+                }else{
+                    peopleWeight = weight!!.text.toString().toFloat()
+                }
 
-                if (peopleWeight <= 0 || peopleWeight > 250) messageError()
+                if (height!!.text.toString().toInt() <= 0 || height!!.text.toString()
+                        .toInt() > 250
+                ) {
+                    messageError()
+                } else {
+                    peopleHeight = height!!.text.toString().toFloat() / 100
+                }
 
-                if (peopleAge <= 0 || peopleAge > 150) messageError()
+                if (age!!.text.toString().toInt() <= 0 || age!!.text.toString()
+                        .toInt() > 150
+                ) messageError()
 
-                val point: Int = peopleWeight / (peopleHeight * peopleHeight)
+                val point: Float = peopleWeight / (peopleHeight * peopleHeight)
 
                 pointBMI?.text = "$point"
+
             } catch (e: NumberFormatException) {
+                messageError()
+            } catch (e: NullPointerException) {
                 messageError()
             }
         }

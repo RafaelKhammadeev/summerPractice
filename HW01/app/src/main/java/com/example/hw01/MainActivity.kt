@@ -40,19 +40,22 @@ class MainActivity : AppCompatActivity() { //
 
         buttonCalculate?.setOnClickListener {
             try {
-                val peopleName: Int =
-                    name!!.length() // если будет null то выкенет null pointer exception
+                val peopleName: Int = name!!.length() // если будет null то выкенет null pointer exception
                 val peopleWeight: Int = weight!!.text.toString().toInt()
                 val peopleHeight: Int = height!!.text.toString().toInt()
                 val peopleAge: Int = age!!.text.toString().toInt()
 
                 if (peopleName <= 0 || peopleName > 50) messageError()
 
-                if (peopleName <= 0 || peopleName > 50) messageError()
+                if (peopleHeight <= 0 || peopleHeight > 250) messageError()
 
-                if (peopleName <= 0 || peopleName > 50) messageError()
+                if (peopleWeight <= 0 || peopleWeight > 250) messageError()
 
-                if (peopleName <= 0 || peopleName > 50) messageError()
+                if (peopleAge <= 0 || peopleAge > 150) messageError()
+
+                val point: Int = peopleWeight / (peopleHeight * peopleHeight)
+
+                pointBMI?.text = "$point"
             } catch (e: NumberFormatException) {
                 messageError()
             }
